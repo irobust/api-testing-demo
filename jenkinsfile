@@ -16,7 +16,7 @@ pipeline{
 
         stage('Test API'){
             steps {
-                withMaven {
+                dir("${WORKSPACE}") {
                     pwsh "mvn clean test"
                 } 
             }
