@@ -16,9 +16,16 @@ pipeline{
 
         stage('Test API'){
             steps {
-                dir("${WORKSPACE}") {
-                    bat "mvn clean test"
-                } 
+                // Add Global Tool Configuration
+                //
+                // dir("${WORKSPACE}") {
+                //     bat "mvn clean test"
+                // } 
+
+                // Install Plugins
+                withMaven{
+                    pwsh "mvn clean test"
+                }
             }
         }
     }
