@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('Build API'){
+            bat 'echo "Build API....."'
+        }
+
+        stage('Start API'){
+            bat 'echo "Start API....."'
+        }
+
+        stage('Test API'){
+            bat 'mvn clean test'
+        }
+    }
+}
