@@ -18,14 +18,14 @@ pipeline{
             steps {
                 // Add Global Tool Configuration
                 //
-                // dir("${WORKSPACE}") {
-                //     bat "mvn clean test"
-                // } 
+                dir("${WORKSPACE}") {
+                    bat "mvn clean test"
+                } 
 
-                // Install Plugins
-                withMaven{
-                    pwsh "mvn clean test"
-                }
+                // // Install Plugins
+                // withMaven{
+                //     bat "mvn clean test"
+                // }
             }
         }
     }
