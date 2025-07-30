@@ -17,7 +17,7 @@ pipeline{
         stage('Test API'){
             steps {
                 withMaven {
-                    bat "mvn clean test"
+                    pwsh "mvn clean test"
                 } 
             }
         }
