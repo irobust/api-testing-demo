@@ -6,13 +6,13 @@ function fn() {
   }
   var config = {
     env: env,
-    myVarName: 'someValue'
+    baseURL: 'http://api.example.com'
   }
   if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
+    config.baseURL = "https://www.deckofcardsapi.com/api"
+    config.dataFile = 'testing-data/dev-data.csv'
+  } else if (env == 'uat') {
+    config.dataFile = 'testing-data/prod-data.csv'
   }
   return config;
 }
