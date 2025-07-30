@@ -15,9 +15,11 @@ pipeline{
         }
 
         stage('Test API'){
-            withMaven {
-                bat "mvn clean test"
-            } 
+            steps {
+                withMaven {
+                    bat "mvn clean test"
+                } 
+            }
         }
     }
 }
